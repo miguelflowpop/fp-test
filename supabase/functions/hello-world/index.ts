@@ -11,6 +11,7 @@ app.get('/hello-world', (req, res) => {
 app.post('/hello-world', (req, res) => {
   const { name } = req.body
   res.send(`Hello ${name}!`)
+  console.log(`Hello ${name}!`)
 })
 
 app.listen(port, () => {
