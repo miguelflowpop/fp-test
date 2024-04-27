@@ -5,7 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import axios from "npm:axios";
 import { createClient } from "npm:@supabase/supabase-js";
 
 const supabaseUrl = "https://tharvruwgfergzpajzol.supabase.co"; // Replace with your Supabase project URL

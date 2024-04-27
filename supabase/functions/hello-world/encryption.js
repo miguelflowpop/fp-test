@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import crypto from "npm:crypto";
+import crypto from "node:crypto";
 
 export const decryptRequest = (body, privatePem, passphrase) => {
   const { encrypted_aes_key, encrypted_flow_data, initial_vector } = body;

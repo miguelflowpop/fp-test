@@ -8,8 +8,8 @@
 import express from "npm:express";
 import { decryptRequest, encryptResponse, FlowEndpointException } from "./encryption.js";
 import { getNextScreen } from "./flow.js";
-import crypto from "npm:crypto";
-import axios from "npm:axios";
+import crypto from "node:crypto";
+
 
 const app = express();
 
@@ -22,14 +22,12 @@ app.use(
   }),
 );
 
-const {
-  APP_SECRET,
-  PRIVATE_KEY,
-  PASSPHRASE = "",
-  WEBHOOK_VERIFY_TOKEN,
-  GRAPH_API_TOKEN,
-  PORT = "3000"  // Default to 3000 if PORT is not set
-} = process.env;
+const APP_SECRET = Deno.env.get('APP_SECRET');
+const PRIVATE_KEY = Deno.env.get('PRIVATE_KEY');
+const PASSPHRASE = Deno.env.get('PASSPHRASE') || "";
+const WEBHOOK_VERIFY_TOKEN = Deno.env.get('WEBHOOK_VERIFY_TOKEN');
+const GRAPH_API_TOKEN = Deno.env.get('GRAPH_API_TOKEN');
+const PORT = Deno.env.get('PORT') || "3000";  // Default to 3000 if PORT is not set
 
 /*
 Example:

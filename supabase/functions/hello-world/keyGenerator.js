@@ -15,9 +15,9 @@
  *
  */
 
-import crypto from "npm:crypto";
+import crypto from "node:crypto";
 
-const passphrase = process.argv[2];
+const passphrase = Deno.args[0];
 if (!passphrase) {
   throw new Error(
     "Passphrase is empty. Please include passphrase argument to generate the keys like: node src/keyGenerator.js {passphrase}"
